@@ -33,11 +33,16 @@ class Node:
                 self.right = self.right.delete_node(node)
         else:
             if self.left is None and self.right is None:
+                del self
                 return None
             elif self.left is None:
-                return self.right
+                temp = self.right
+                del self
+                return temp
             elif self.right is None:
-                return self.left
+                temp = self.left
+                del self
+                return temp
 
             min_val = self.right.find_min()
             self.value = min_val

@@ -10,10 +10,10 @@ def create_tree(devices):
 
 
 def main():
-    devices = [Device("Vici", "Multimeter", 2005, 87), Device("Acrel", "Ammeter", 2009, 80),
-               Device("Vici", "Multimeter", 2005, 83), Device("Sunhokey", "Voltmeter", 2009, 70),
-               Device("Acrel", "Voltmeter", 2007, 78), Device("Sunhokey", "Ammeter", 2006, 98),
-               Device("Sunhokey", "Oscillograph", 2007, 85)]
+    devices = [Device("Vici", "Multimeter", 2017, 87), Device("Vici", "Multimeter", 2008, 80),
+               Device("Vici", "Multimeter", 2015, 85), Device("Vici", "Multimeter", 2012, 72),
+               Device("Vici", "Multimeter", 2014, 84), Device("Vici", "Multimeter", 2005, 76),
+               Device("Vici", "Multimeter", 2005, 81)]
 
     tree = create_tree(devices)
 
@@ -23,13 +23,13 @@ def main():
         print(node)
 
     print("==========Printing preorder traversal after deleting a node==========")
-    tree.delete_node(devices[1])
+    tree = tree.delete_node(devices[1])
     preorder_tree = tree.do_preorder_traversal()
     for node in preorder_tree:
         print(node)
 
     print("==========Printing preorder traversal after deleting a nodes with same year==========")
-    tree.delete_all_by_year(2007)
+    tree.delete_all_by_year(2005)
     preorder_tree = tree.do_preorder_traversal()
     for node in preorder_tree:
         print(node)
